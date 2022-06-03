@@ -1,2 +1,3 @@
 # fullstack-hinkula
-Full Stack Development with Spring Boot and React Juha Hinkula
+This project is based on the book "Full Stack Development with Spring Boot and React" 
+by Juha Hinkula
