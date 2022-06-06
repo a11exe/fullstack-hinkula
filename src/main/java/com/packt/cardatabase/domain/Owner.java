@@ -19,7 +19,7 @@ public class Owner {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String firstname, lastname;
+    private String firstName, lastName;
 
     @JsonIgnore
     @OneToMany(cascade = CascadeType.ALL, mappedBy="owner")
@@ -28,9 +28,9 @@ public class Owner {
     public Owner() {
     }
 
-    public Owner(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
+    public Owner(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public Long getId() {
@@ -41,20 +41,20 @@ public class Owner {
         this.id = id;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstname) {
+        this.firstName = firstname;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastname) {
+        this.lastName = lastname;
     }
 
     public List<Car> getCars() {
