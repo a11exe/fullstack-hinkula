@@ -18,7 +18,7 @@ This CRUD application allows you to add, edit and delete cars.
 
 ### Build 
 ```
-./backend/gradlew clean buildFrontend build
+./backend/gradlew -p ./backend clean buildFrontend build
 ```
 
 ### Run
