@@ -1,3 +1,4 @@
+import "./Carlist.css";
 import React, { useEffect, useState } from "react";
 import { SERVER_URL } from "../constant.js";
 import {
@@ -29,6 +30,7 @@ function Carlist() {
   const token = sessionStorage.getItem("jwt");
 
   const fetchCars = () => {
+    console.log("Fetching cars");
     fetch(SERVER_URL + "api/cars", {
       headers: { Authorization: token },
     })
@@ -82,7 +84,7 @@ function Carlist() {
     },
   ];
 
-  useEffect(() => fetchCars, []);
+  useEffect(() => fetchCars(), []);
 
   const addCar = (car) => {
     const token = sessionStorage.getItem("jwt");
@@ -126,24 +128,28 @@ function Carlist() {
   };
 
   return (
-    <React.Fragment>
-      <AddCar addCar={addCar} />
-      <div style={{ height: 500, width: "100%" }}>
-        <DataGrid
-          rows={cars}
-          columns={columns}
-          getRowId={(row) => row._links.self.href}
-          disableSelectionOnClick={true}
-          components={{ Toolbar: CustomToolbar }}
-        />
-        <Snackbar
-          open={open}
-          autoHideDuration={2000}
-          onClose={() => setOpen(false)}
-          message="Car deleted"
-        />
+    
+      <div className="Cars">
+        <div className="AddButton">
+          <AddCar addCar={addCar} />
+        </div>
+        <div className="Carslist">
+          <DataGrid
+            rows={cars}
+            columns={columns}
+            getRowId={(row) => row._links.self.href}
+            disableSelectionOnClick={true}
+            components={{ Toolbar: CustomToolbar }}
+          />
+          <Snackbar
+            open={open}
+            autoHideDuration={2000}
+            onClose={() => setOpen(false)}
+            message="Car deleted"
+          />
+        </div>
       </div>
-    </React.Fragment>
+    
   );
 }
 

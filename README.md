@@ -1,8 +1,10 @@
 # fullstack-hinkula
 
-This project is based on the book "Full Stack Development with Spring Boot and React" by Juha Hinkula.
+This project is based on the book ["Full Stack Development with Spring Boot and React" by Juha Hinkula](Juha_Hinkula_Full_stack_development_with_Spring_Boot_and_React_build.pdf.rar).
 
 This CRUD application allows you to add, edit and delete cars.
+
+![App screenshot](app.png)
 
 ### Used technologies:
 - Java 11
@@ -13,7 +15,7 @@ This CRUD application allows you to add, edit and delete cars.
 - Spring Data Access (ORM, Spring Data JPA (Hibernate), Transactions)
 - Database: MariaDB, H2 (for test)
 - RESTful services
-- React
+- React with [material design](https://mui.com/material-ui)
 - Docker
 
 ### Build 

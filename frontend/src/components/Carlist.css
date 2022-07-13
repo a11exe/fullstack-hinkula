@@ -1,0 +1,14 @@
+.Cars {
+  align-items: left;
+  text-align: left;
+}
+
+.AddButton {
+  margin-top: 10px;
+}
+
+.Carlist {
+  height: 500;
+  width: "100%";
+  margin-top: 10px;
+}

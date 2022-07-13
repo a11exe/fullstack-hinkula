@@ -5,6 +5,14 @@ import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import Carlist from "./Carlist.js";
 import { Snackbar } from "@mui/material";
+import { AppBar } from "@mui/material";
+import { Toolbar } from "@mui/material";
+import { Typography } from "@mui/material";
+import Divider from '@mui/material/Divider';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
 
 function Login() {
   const [user, setUser] = useState({
@@ -45,15 +53,36 @@ function Login() {
   if (isAuthenticated) {
     return (
       <div>
-        <Button variant="outlined" color="primary" onClick={logout}>
-          Logout
-        </Button>
-        <Carlist />;
+        <AppBar position="static">
+          <Toolbar>
+            <Typography
+            variant="h6"
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
+          >
+            Carshop
+          </Typography>
+            <Divider />
+            <List>
+              <ListItem key="1" disablePadding>
+                <ListItemButton sx={{ textAlign: "center" }} onClick={logout}>
+                  <ListItemText primary="Logout" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          </Toolbar>
+        </AppBar>
+        <Carlist />
       </div>
     );
   } else {
     return (
       <div>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="h6">Carshop</Typography>
+          </Toolbar>
+        </AppBar>
         <Stack spacing={2} alignItems="center" mt={2}>
           <TextField name="username" label="Username" onChange={handleChange} />
           <TextField
