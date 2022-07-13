@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    container_name: carapp
+    ports:
+      - 8080:8080
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mariadb://mariadb:3306/cardb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=product
+
+  db:
+    image: 'mariadb:latest'
+    container_name: mariadb
+    environment:
+      - MYSQL_ROOT_PASSWORD=product
+      - MYSQL_DATABASE=cardb

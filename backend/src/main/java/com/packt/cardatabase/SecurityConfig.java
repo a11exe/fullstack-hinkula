@@ -50,9 +50,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
+                .antMatchers("/").permitAll()
+                .antMatchers("/static/**").permitAll()
+                .antMatchers("/api/**").authenticated()
                 // POST request to /login endpoint is not secured
-                .antMatchers(HttpMethod.POST, "/login").
-                permitAll()
+                .antMatchers(HttpMethod.POST, "/login").permitAll()
                 // All other requests are secured
                 .anyRequest().authenticated().and()
                 .exceptionHandling()
