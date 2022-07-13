@@ -7,3 +7,8 @@ by Juha Hinkula
 ```
 ./gradlew clean build
 ```
+
+Created jar will be here
+```
+build/libs/cardatabase-0.0.1-SNAPSHOT-plain.jar
+```
