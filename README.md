@@ -4,7 +4,7 @@ This project is based on the book ["Full Stack Development with Spring Boot and 
 
 This CRUD application allows you to add, edit and delete cars.
 
-![App screenshot](app.png)
+![App screenshot](appscreen.png)
 
 ### Used technologies:
 - Java 11

@@ -5,10 +5,11 @@
 
 .AddButton {
   margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: left;
 }
 
-.Carlist {
+.CarList {
   height: 500;
   width: "100%";
-  margin-top: 10px;
 }

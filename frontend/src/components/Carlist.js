@@ -128,28 +128,26 @@ function Carlist() {
   };
 
   return (
-    
-      <div className="Cars">
-        <div className="AddButton">
-          <AddCar addCar={addCar} />
-        </div>
-        <div className="Carslist">
-          <DataGrid
-            rows={cars}
-            columns={columns}
-            getRowId={(row) => row._links.self.href}
-            disableSelectionOnClick={true}
-            components={{ Toolbar: CustomToolbar }}
-          />
-          <Snackbar
-            open={open}
-            autoHideDuration={2000}
-            onClose={() => setOpen(false)}
-            message="Car deleted"
-          />
-        </div>
+    <React.Fragment className="Cars">
+      <div className="AddButton">
+        <AddCar addCar={addCar} />
       </div>
-    
+      <div style={{ height: 500, width: "100%" }}>
+        <DataGrid
+          rows={cars}
+          columns={columns}
+          getRowId={(row) => row._links.self.href}
+          disableSelectionOnClick={true}
+          components={{ Toolbar: CustomToolbar }}
+        />
+        <Snackbar
+          open={open}
+          autoHideDuration={2000}
+          onClose={() => setOpen(false)}
+          message="Car deleted"
+        />
+      </div>
+    </React.Fragment>
   );
 }
 
