@@ -24,6 +24,12 @@ This CRUD application allows you to add, edit and delete cars.
 ```
 
 ### Run
+Delete previous docker images if needed
+```
+docker system prune
+docker image rm fullstack-hinkula_app
+```
+Run application in docker with database
 ```
 docker-compose up
 ```
